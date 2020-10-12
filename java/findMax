@@ -1,0 +1,38 @@
+//this program is used to find maximum number from a sequence of numbers using array list
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class findMax {
+
+	public static void main(String[] args) {
+  
+		//create arraylist
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		Scanner read = new Scanner(System.in);
+		int num;
+		
+		//request sequence of number from user
+		do {
+		System.out.println("Enter sequence of number ending with 0");
+		num = read.nextInt();
+		list.add(num);
+		}
+		while(num!=0);
+		
+		System.out.println("maximum number is: "+max(list));
+
+		read.close();
+	}
+	//method to find maximum number
+	public static Integer max(ArrayList<Integer> list) {
+		int max=0;
+		if(list.size()==0)
+			return null;
+		for(Integer i:list) {
+			if(i>max)
+				max=i;
+		}
+		return max;
+	}
+}
