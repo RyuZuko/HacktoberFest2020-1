@@ -1,0 +1,45 @@
+//This program is used to simulate the Craps dice game
+//To win in this game sum of two dice must be 7 or 11 (natural number)
+//if your sum is 2,3 or 12 (craps number) then you automatically lose
+//if your sum is another value then natural or craps number then the sum is called points
+//player then roll two dice and if the sum of the new roll is equal to the point then the player wins else the player lose
+
+public class crapsGame {
+
+	public static void main(String[] args) {
+		
+		//craps 2,3,12
+		//natural 7,11
+		//points etc
+		
+		//declaring varaible
+		int roll1 = (int)(Math.random()*6)+1;
+		int roll2 = (int)(Math.random()*6)+1;
+		int res1 = roll1 + roll2;
+		int roll3 = (int)(Math.random()*6)+1;
+		int roll4 = (int)(Math.random()*6)+1;
+		int res2 = roll3 + roll4;
+		
+		//show first result
+		System.out.println("You rolled: "+roll1+" + "+roll2+" = "+res1+"\n");
+		
+		//check whether the number rolled are natural or craps
+		if(res1 == 7 || res1 == 11)
+			System.out.println(" Natural \n You Win !");
+		else if (res1== 2 || res1 == 3 || res1 == 12)
+			System.out.println(" craps \n You Lose !");
+		else {
+			
+			System.out.println("Point is: "+ res1+"\n");
+			System.out.println("You rolled: "+roll3+" + "+roll4+" = "+res2 +"\n");
+			
+			if(res2 == res1)
+				System.out.println(" Points \n You Win !");
+			
+			else
+				System.out.println("You Lose !");
+		}
+
+	}
+
+}
